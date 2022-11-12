@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="25dp"
+
+    >
+    <TextView
+        android:id="@+id/profileOther"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Profile"
+        android:textSize="30dp"
+        android:textColor="#0B0000"
+        android:fontFamily="@font/ubuntu_mono_bold"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+        android:layout_centerInParent="true"
+        android:layout_alignParentTop="true"
+        />
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imageOther"
+        android:layout_width="150dp"
+
+        android:layout_height="155dp"
+        android:layout_below="@+id/profileOther"
+
+
+        android:layout_centerInParent="true"
+        android:src="@drawable/ic_baseline_account_circle_24" />
+
+
+
+    <TextView
+        android:id="@+id/nameOther"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageOther"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="15dp"
+        android:fontFamily="@font/ubuntu_medium"
+        android:text="Rifat"
+        android:textSize="19dp" />
+
+    <TextView
+        android:id="@+id/aboutOther"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nameOther"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/ubuntu_medium"
+        android:text="About : Programming"
+        android:textSize="19dp" />
+
+    <TextView
+        android:id="@+id/ageOther"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/aboutOther"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/ubuntu_medium"
+        android:text="22"
+        android:textSize="19dp" />
+
+    <TextView
+        android:id="@+id/profOther"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ageOther"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/ubuntu_medium"
+        android:text="Learner"
+        android:textSize="19dp" />
+
+    <TextView
+        android:id="@+id/countryOther"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profOther"
+        android:layout_marginLeft="15dp"
+        android:fontFamily="@font/ubuntu_medium"
+        android:text="Country  : Bangladesh"
+        android:layout_marginBottom="10dp"
+        android:textSize="19dp" />
+
+    <TextView
+        android:id="@+id/ratingOther"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/countryOther"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/ubuntu_medium"
+        android:text="Rating : 5"
+        android:textSize="19dp" />
+
+    <Button
+        android:id="@+id/messageRequest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ratingOther"
+        android:text="Meet Request"
+        android:textAllCaps="false"
+        android:textSize="18dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        />
+
+
+</RelativeLayout>

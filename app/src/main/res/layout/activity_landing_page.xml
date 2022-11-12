@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingLeft="10dp"
+    android:layout_marginTop="10dp"
+    android:paddingRight="10dp"
+    android:orientation="vertical"
+    android:layout_marginBottom="10dp">
+
+
+    <TableRow>
+
+        <TextView
+            android:id="@+id/home1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="26"
+            android:fontFamily="@font/ubuntu_mono_bold"
+            android:text="Home"
+            android:textAlignment="center"
+            android:textSize="35dp">
+
+        </TextView>
+
+
+        <ImageView
+            android:id="@+id/goProfile"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_weight="0"
+
+            android:src="@drawable/ic_baseline_account_circle_24"
+            >
+        </ImageView>
+
+    </TableRow>
+
+    <TableRow>
+
+        <EditText
+            android:layout_width="250dp"
+            android:id="@+id/searchProfession"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+
+             android:hint="Enter profession"
+            />
+        <Button
+              android:layout_width="wrap_content"
+            android:id="@+id/searchButton"
+            android:textAllCaps="false"
+            android:layout_height="wrap_content"
+
+            android:text="Search"
+            />
+
+    </TableRow>
+
+    <TextView
+        android:layout_width="350dp"
+        android:layout_height="3dp"
+        android:background="#22010C"
+        android:layout_weight="0"
+        android:layout_marginLeft="1dp"
+        android:layout_marginRight="1dp"
+        >
+
+    </TextView>
+
+
+
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="500dp"
+        android:id="@+id/listview"
+        android:padding="10dp"
+        android:layout_marginTop="5dp"
+        android:background="#E0ECF5"
+        android:divider="#0CE449"
+        android:dividerHeight="5dp"
+        android:layout_marginBottom="10dp"
+
+        />
+
+
+    <RelativeLayout>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Mess"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="11dp"
+        android:background="@color/white"
+        android:src="@android:drawable/ic_dialog_email"
+        android:layout_gravity="end"
+        android:layout_alignParentEnd="true"
+        android:backgroundTint="#FFFFFF"
+        app:rippleColor="@color/white" />
+    </RelativeLayout>
+
+
+
+
+
+
+</TableLayout>
+
+
+
+<!--<TableRow>-->
+<!--<TextView-->
+<!--    android:id="@+id/land_nam"-->
+<!--    android:layout_width="wrap_content"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:layout_gravity="left"-->
+<!--    android:text="Name"-->
+<!--    android:layout_weight="0"-->
+<!--    android:fontFamily="@font/ubuntu"-->
+<!--    android:textAlignment="center"-->
+<!--    android:textSize="18dp"-->
+<!--    >-->
+<!--</TextView>-->
+
+<!--<TextView-->
+<!--    android:id="@+id/land_profession"-->
+<!--    android:layout_width="wrap_content"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:layout_gravity="left"-->
+<!--    android:text="Profession"-->
+<!--    android:layout_weight="0"-->
+<!--    android:fontFamily="@font/ubuntu"-->
+<!--    android:textAlignment="center"-->
+<!--    android:textSize="18dp"-->
+<!--    >-->
+<!--</TextView>-->
+
+<!--<TextView-->
+<!--    android:id="@+id/land_diss"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:layout_gravity="left"-->
+<!--    android:layout_weight="2"-->
+<!--    android:fontFamily="@font/ubuntu"-->
+<!--    android:text="Dist."-->
+<!--    android:textAlignment="center"-->
+<!--    android:textSize="18dp">-->
+
+<!--</TextView>-->
+
+<!--<TextView-->
+<!--    android:id="@+id/land_reques"-->
+<!--    android:layout_width="wrap_content"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:layout_gravity="left"-->
+<!--    android:text="Request"-->
+<!--    android:layout_weight="6"-->
+<!--    android:fontFamily="@font/ubuntu"-->
+<!--    android:textAlignment="center"-->
+<!--    android:textSize="18dp"-->
+<!--    >-->
+<!--</TextView>-->
+
+<!--</TableRow>-->
+
+
+
+<!--<TableRow-->
+<!--android:id="@+id/tabRmain"-->
+<!--    >-->
+<!--<TextView-->
+<!--    android:layout_width="wrap_content"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:text="latitude"-->
+<!--    android:textSize="25dp"-->
+<!--    android:id="@+id/lat"-->
+<!--    android:layout_weight="1"-->
+<!--    android:textColor="#5F052B"-->
+<!--    android:layout_marginLeft="1dp"-->
+<!--    android:layout_marginRight="1dp"-->
+<!--    android:textAlignment="center"-->
+<!--    >-->
+
+<!--</TextView>-->
+<!--<TextView-->
+<!--    android:layout_width="wrap_content"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:text="lengthitude"-->
+<!--    android:textSize="25dp"-->
+<!--    android:id="@+id/lan"-->
+<!--    android:layout_weight="2"-->
+<!--    android:textColor="@color/purple_700"-->
+<!--    android:layout_marginLeft="1dp"-->
+<!--    android:layout_marginRight="1dp"-->
+<!--    android:textAlignment="center"-->
+<!--    >-->
+
+<!--</TextView>-->
+
+
+
+
+<!--</TableRow>-->
+
+<!--<TextView-->
+<!--android:layout_width="350dp"-->
+<!--android:layout_height="3dp"-->
+<!--android:background="#22010C"-->
+<!--android:layout_weight="0"-->
+<!--android:layout_marginLeft="1dp"-->
+<!--android:layout_marginRight="1dp"-->
+<!--    >-->
+
+<!--</TextView>-->
+
+<!--<TableRow>-->
+
+<!--<TextView-->
+<!--    android:id="@+id/land_name"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:layout_weight="0"-->
+<!--    android:fontFamily="@font/ubuntu"-->
+<!--    android:text="Sark"-->
+<!--    android:textAlignment="center"-->
+<!--    android:textSize="18dp">-->
+
+<!--</TextView>-->
+
+<!--<TextView-->
+<!--    android:id="@+id/land_professio"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:layout_weight="0"-->
+<!--    android:fontFamily="@font/ubuntu_light"-->
+<!--    android:text="Student"-->
+<!--    android:textAlignment="center"-->
+<!--    android:textSize="18dp">-->
+
+<!--</TextView>-->
+
+<!--<TextView-->
+<!--    android:id="@+id/land_dis"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:layout_weight="2"-->
+<!--    android:fontFamily="@font/ubuntu"-->
+<!--    android:text="0.5m."-->
+<!--    android:textAlignment="center"-->
+<!--    android:textSize="18dp">-->
+
+<!--</TextView>-->
+
+<!--<ImageView-->
+<!--    android:layout_width="30dp"-->
+<!--    android:layout_height="30dp"-->
+<!--    android:layout_weight="1"-->
+<!--    android:src="@android:drawable/ic_input_add"-->
+<!--    >-->
+
+<!--</ImageView>-->
+
+<!--</TableRow>-->
+
+<!--<RelativeLayout>-->
+<!--<com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--    android:layout_width="wrap_content"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:id="@+id/Mess"-->
+<!--    android:layout_marginTop="10dp"-->
+<!--    android:layout_marginRight="11dp"-->
+<!--    android:background="@color/white"-->
+<!--    android:src="@android:drawable/ic_dialog_email"-->
+<!--    android:layout_gravity="end"-->
+<!--    android:layout_alignParentEnd="true"-->
+<!--    android:backgroundTint="#FFFFFF"-->
+<!--    app:rippleColor="@color/white" />-->
+<!--</RelativeLayout>-->

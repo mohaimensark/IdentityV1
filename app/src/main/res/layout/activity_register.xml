@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    >
+
+
+    <TextView
+        android:id="@+id/txtWelcome"
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"
+        android:text="Identity"
+        android:textColor="@color/purple_700"
+        android:layout_marginBottom="30dp"
+        android:textSize="35sp"
+        android:padding="20sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/emailReg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtWelcome"
+        android:textSize="20sp"
+        android:layout_centerInParent="true"
+        android:inputType="textEmailAddress"
+        android:hint="Enter email"
+        android:autofillHints="true" />
+
+    <EditText
+        android:id="@+id/nameReg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/emailReg"
+        android:textSize="20sp"
+        android:layout_centerInParent="true"
+        android:hint="Enter name" />
+
+    <EditText
+        android:id="@+id/profess"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/nameReg"
+        android:textSize="20sp"
+        android:layout_centerInParent="true"
+        android:hint="Enter your profession" />
+
+    <EditText
+        android:id="@+id/age"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/profess"
+        android:layout_centerInParent="true"
+        android:hint="Enter your age"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/passReg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/age"
+        android:layout_centerInParent="true"
+        android:inputType="textPassword"
+
+        android:textSize="20dp"
+        android:hint="Enter password" />
+
+    <EditText
+        android:id="@+id/passConf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/passReg"
+        android:layout_centerInParent="true"
+        android:inputType="textPassword"
+
+        android:textSize="20dp"
+        android:hint="Confirm password" />
+
+
+    <Button
+        android:id="@+id/btnReg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/passConf"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="60dp"
+        android:background="@color/teal_700"
+
+        android:text="Register"
+        android:textAllCaps="false"
+        />
+
+    <TextView
+        android:id="@+id/txtRegWithGmail"
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+
+        android:layout_below="@id/btnReg"
+        android:text="Register with gmail"
+        android:textColor="#00020E"
+        android:layout_marginBottom="20dp"
+        android:textSize="17sp"
+
+        />
+
+    <TextView
+        android:id="@+id/haveAcc"
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+
+        android:layout_below="@id/txtRegWithGmail"
+        android:text="Already have an account?"
+        android:textColor="@color/purple_700"
+        android:layout_marginBottom="20dp"
+        android:textSize="17sp"
+
+        />
+
+
+
+
+</RelativeLayout>

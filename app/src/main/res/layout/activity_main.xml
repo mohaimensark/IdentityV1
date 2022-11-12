@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:padding="20dp"
+
+    >
+
+
+    <TextView
+        android:id="@+id/txtWelcome"
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="140dp"
+        android:layout_centerHorizontal="true"
+        android:text="Identity"
+        android:textColor="@color/purple_700"
+        android:layout_marginBottom="60dp"
+        android:textSize="35sp"
+        android:padding="20sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/emailSin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtWelcome"
+        android:textSize="20sp"
+        android:layout_centerInParent="true"
+        android:inputType="textEmailAddress"
+        android:hint="Enter email" />
+
+    <EditText
+        android:id="@+id/passSin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/emailSin"
+        android:layout_centerInParent="true"
+        android:inputType="textPassword"
+        android:layout_marginTop="30dp"
+        android:textSize="20dp"
+        android:hint="Enter password" />
+
+
+    <Button
+        android:id="@+id/btnSignin"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_below="@id/passSin"
+        android:textSize="15sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="20dp"
+        android:background="@color/teal_700"
+        android:text="Sign In"
+        android:textAllCaps="false"
+        android:textColor="#FCF9F9" />
+
+    <TextView
+        android:id="@+id/txtFor"
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+
+        android:layout_below="@id/btnSignin"
+        android:text="Forget Password?"
+        android:textColor="#681029"
+        android:layout_marginBottom="20dp"
+        android:textSize="15sp"
+
+        />
+
+    <TextView
+        android:id="@+id/txtReg"
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+
+
+        android:text="Create New Account"
+        android:layout_below="@id/txtFor"
+        android:textColor="@color/purple_700"
+        android:layout_marginBottom="60dp"
+        android:textSize="15sp"
+
+        />
+
+
+</RelativeLayout>
