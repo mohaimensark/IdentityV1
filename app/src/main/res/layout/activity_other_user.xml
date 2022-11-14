@@ -101,16 +101,18 @@
         android:textSize="19dp" />
 
     <Button
-        android:id="@+id/messageRequest"
+        android:autoLink="web"
+        android:linksClickable="true"
+        android:id="@+id/meetRequest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/ratingOther"
-        android:text="Meet Request"
-        android:textAllCaps="false"
-        android:textSize="18dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
-        />
+        android:text="Meet request"
+        android:textAllCaps="false"
+        android:background="#16DAC9"
+        android:textSize="18dp" />
 
 
 </RelativeLayout>

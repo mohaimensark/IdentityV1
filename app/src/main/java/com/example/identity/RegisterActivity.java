@@ -56,10 +56,11 @@ public class RegisterActivity extends AppCompatActivity {
                 String email = binding.emailReg.getText().toString();
                 String profession = binding.profess.getText().toString();
                 String age = binding.age.getText().toString();
+                String ProfileLink = binding.fbLink.getText().toString();
                 String password = binding.passReg.getText().toString();
                 String confpass = binding.passConf.getText().toString();
                 progressDialog.show();
-                if (TextUtils.isEmpty(email) || TextUtils.isEmpty(password) || TextUtils.isEmpty(name) || TextUtils.isEmpty(profession) || TextUtils.isEmpty(confpass)) {
+                if (TextUtils.isEmpty(email) || TextUtils.isEmpty(password) || TextUtils.isEmpty(name) || TextUtils.isEmpty(profession) || TextUtils.isEmpty(confpass)||TextUtils.isEmpty(ProfileLink)) {
                     progressDialog.cancel();
                     Toast.makeText(RegisterActivity.this, "Empty credintials", Toast.LENGTH_SHORT).show();
                 } else if (password.length() < 6) {
@@ -78,10 +79,11 @@ public class RegisterActivity extends AppCompatActivity {
                                     double lat = 51.5074;
                                     double lng = 0.1278;
                                     GeoPoint hash3 = new GeoPoint(lat, lng);
+
                                     UserModel userModel = new UserModel() ;
-                                    String name = userModel.getName() ;
+                                    String rname = userModel.getName() ;
                                     progressDialog.cancel();
-                                    RealTimeName hash = new RealTimeName(name, profession);
+                                    RealTimeName hash = new RealTimeName(rname, profession);
                                     firebaseAuth = FirebaseAuth.getInstance();
                                     firebaseFirestore = FirebaseFirestore.getInstance();
                                     firebaseDatabase = FirebaseDatabase.getInstance();
@@ -94,7 +96,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                                     Toast.makeText(RegisterActivity.this, "Success!", Toast.LENGTH_SHORT).show();
                                     firebaseFirestore.collection("User")
-                                            .document(Objects.requireNonNull(FirebaseAuth.getInstance().getUid())).set(new UserModel(email, name, profession, age, hash3, "null"));
+                                            .document(Objects.requireNonNull(FirebaseAuth.getInstance().getUid())).set(new UserModel(name,email, profession, age,"null", hash3,ProfileLink));
 
                                 }
                             })

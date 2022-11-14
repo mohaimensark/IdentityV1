@@ -6,21 +6,29 @@ import com.google.firebase.firestore.GeoPoint;
 
 public class UserModel {
 
-    private String name,email,password,profession,age,about;
+    private String name,email,password,profession,age,about,Profilelink;
     GeoPoint latitude;
 
     public UserModel() {
     }
 
-    public UserModel(String email, String name, String profession,String age,GeoPoint latitude,String about) {
+    public UserModel(String name, String email,  String profession, String age, String about, GeoPoint latitude, String profilelink) {
         this.name = name;
         this.email = email;
         this.profession = profession;
         this.age = age;
         this.about = about;
+        Profilelink = profilelink;
         this.latitude = latitude;
     }
 
+    public String getProfilelink() {
+        return Profilelink;
+    }
+
+    public void setProfilelink(String profilelink) {
+        Profilelink = profilelink;
+    }
 
     public GeoPoint getLatlan() {
         return latitude;

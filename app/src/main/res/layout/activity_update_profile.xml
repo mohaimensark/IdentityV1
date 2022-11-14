@@ -62,11 +62,22 @@
         android:layout_centerInParent="true"
         android:hint="Age" />
 
+
+    <EditText
+        android:id="@+id/updateLink"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ageUpdate"
+        android:textSize="20sp"
+        android:layout_centerInParent="true"
+        android:hint="Others Profile Link" />
+
+
     <EditText
         android:id="@+id/passUpdate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/ageUpdate"
+        android:layout_below="@id/updateLink"
         android:layout_centerInParent="true"
         android:inputType="textPassword"
 
