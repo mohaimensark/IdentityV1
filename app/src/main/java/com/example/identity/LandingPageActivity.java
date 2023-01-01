@@ -178,14 +178,13 @@ public class LandingPageActivity extends AppCompatActivity {
                             String lowervalue  = searchValue.toLowerCase() ;
                             String str =  professmap.get(uid) ;
                             String currprofession = str.toLowerCase() ;
-                            //Toast.makeText(LandingPageActivity.this, lowervalue, Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LandingPageActivity.this, lowervalue, Toast.LENGTH_SHORT).show();
                             if (lowervalue.equals(currprofession)) {
                                 String t = "User Name : " + namemap.get(uid) + "\n" + "User Profession : " + professmap.get(uid) + "\n" + "Latitude : " + Lattitude + " \n" + "Longitude : " + Longitude + "\n" + "Distance From You : " + distanceFin + " m ";
                                 list.add(t);
                             }
                             //   searchValue = "null";
-                        }
-                        else {
+                        } else {
                             String t = "User Name : " + namemap.get(uid) + "\n" + "User Profession : " +  professmap.get(uid) + "\n" + "Latitude : " + Lattitude + " \n" + "Longitude : " + Longitude + "\n" + "Distance From You : " + distanceFin + " m ";
                             list.add(t);
                             //   searchValue = "null";

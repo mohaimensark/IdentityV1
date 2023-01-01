@@ -195,11 +195,22 @@
 
 
     <TextView
-        android:id="@+id/Update_profile"
+        android:id="@+id/profileLink"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="7dp"
         android:layout_below="@+id/rating"
+        android:layout_alignParentLeft="true"
+        android:fontFamily="@font/ubuntu_medium"
+        android:text="link of social"
+        android:textSize="19dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/Update_profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profileLink"
         android:layout_marginBottom="10dp"
         android:fontFamily="@font/ubuntu"
         android:text="Update your profile"

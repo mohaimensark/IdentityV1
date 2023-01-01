@@ -62,6 +62,7 @@ public class LocationService extends Service {
 
 
     public String name = "null", profession = "null";
+
     public LocationService() {
     }
 
@@ -143,7 +144,6 @@ public class LocationService extends Service {
 //                UpdatedGeoData newhash = new UpdatedGeoData(s,s1,name,profession);
 
 
-
                 //Realtime
                 try {
                     firebaseDatabase.getReference().child("User").child("latlan").child(firebaseAuth.getCurrentUser().getUid())
@@ -151,8 +151,6 @@ public class LocationService extends Service {
                 } catch (Exception e) {
                     Toast.makeText(LocationService.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
-
-
 
 
                 //Firestore
@@ -203,6 +201,7 @@ public class LocationService extends Service {
         };
         startLocationUpdates();
     }
+
     @RequiresApi(api = Build.VERSION_CODES.O)
     private void createNotificationChanel() {
         String notificationChannelId = "Location channel id";

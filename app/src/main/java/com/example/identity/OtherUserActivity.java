@@ -4,13 +4,9 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.Html;
-import android.text.method.LinkMovementMethod;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,16 +28,12 @@ import com.google.firebase.storage.StorageReference;
 
 import org.checkerframework.checker.nullness.qual.Nullable;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class OtherUserActivity extends AppCompatActivity {
 
     ActivityOtherUserBinding binding;
     TextView name,profession,about,rating,country;
-    Button MRQ;
     FirebaseAuth firebaseAuth;
     FirebaseFirestore firebaseFirestore;
     String userId;
@@ -52,10 +44,7 @@ public class OtherUserActivity extends AppCompatActivity {
     FirebaseDatabase database;
     FirebaseStorage storage;
     CircleImageView imageView;
-    FirebaseDatabase firebaseDatabase;
     String us;
-    String ProfileLink;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,7 +52,6 @@ public class OtherUserActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         name=findViewById(R.id.nameOther);
-        MRQ = findViewById(R.id.meetRequest);
 
         profession = findViewById(R.id.profOther);
         img = findViewById(R.id.imageOther);
@@ -115,7 +103,6 @@ public class OtherUserActivity extends AppCompatActivity {
                             about.setText("About  :"+value.getString("about"));
                             age.setText("Age  :"+value.getString("age"));
                             profession.setText("Profession  :"+value.getString("profession"));
-                            ProfileLink = value.getString("profilelink");
                            // country.setText(value.getString("country"));
                            // rating.setText(value.getString("rating"));
                         }
@@ -123,25 +110,13 @@ public class OtherUserActivity extends AppCompatActivity {
 
 
 
-               firebaseDatabase = FirebaseDatabase.getInstance();
-                MRQ.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
+                    binding.messageRequest.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+
+                        }
+                    });
 
 
-                        goLink(ProfileLink);
-
-//                        MRQ.setMovementMethod(LinkMovementMethod.getInstance());
-//                        Toast.makeText(OtherUserActivity.this, ProfileLink, Toast.LENGTH_SHORT).show();
-//                        String text = "<a href=ProfileLink> Meet Request </a>";
-//                        MRQ.setText(Html.fromHtml(text));
-                    }
-                });
-    }
-
-    private void goLink(String ss)
-    {
-        Uri uri = Uri.parse(ss);
-        startActivity(new Intent(Intent.ACTION_VIEW,uri));
     }
 }

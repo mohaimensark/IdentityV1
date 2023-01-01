@@ -10,7 +10,6 @@
     android:orientation="vertical"
     android:layout_marginBottom="10dp">
 
-
     <TableRow>
 
         <TextView
@@ -73,20 +72,14 @@
     </TextView>
 
 
-
-
-    <ListView
-        android:layout_width="wrap_content"
-        android:layout_height="500dp"
-        android:id="@+id/listview"
-        android:padding="10dp"
-        android:layout_marginTop="5dp"
-        android:background="#E0ECF5"
-        android:divider="#0CE449"
-        android:dividerHeight="5dp"
-        android:layout_marginBottom="10dp"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycleViewID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
 
         />
+
+
 
 
     <RelativeLayout>

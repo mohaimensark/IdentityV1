@@ -45,18 +45,18 @@ public class MainActivity extends AppCompatActivity {
     LocationService mLocationService = new LocationService();
     Intent mServiceIntent;
     TextView lat;
-    Button startServiceBtn, stopServiceBtn,btnSignin;
+    Button startServiceBtn, stopServiceBtn, btnSignin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding=ActivityMainBinding.inflate(getLayoutInflater());
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         firebaseAuth = FirebaseAuth.getInstance();
         progressDialog = new ProgressDialog(this);
 
-        reg= findViewById(R.id.txtReg);
+        reg = findViewById(R.id.txtReg);
 
         forget = findViewById(R.id.txtFor);
 
@@ -69,7 +69,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
 
-
                 //Location end
 
                 String email = binding.emailSin.getText().toString();
@@ -78,12 +77,10 @@ public class MainActivity extends AppCompatActivity {
                 if (TextUtils.isEmpty(email) || TextUtils.isEmpty(password)) {
                     progressDialog.cancel();
                     Toast.makeText(MainActivity.this, "Empty credintials", Toast.LENGTH_SHORT).show();
-                }
-                else if(password.length() < 6) {
+                } else if (password.length() < 6) {
                     progressDialog.cancel();
                     Toast.makeText(MainActivity.this, "Password is too short", Toast.LENGTH_SHORT).show();
-                }
-                else {
+                } else {
                     firebaseAuth.signInWithEmailAndPassword(email, password)
                             .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                                 @Override
@@ -96,9 +93,6 @@ public class MainActivity extends AppCompatActivity {
 
                                             if (ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.ACCESS_BACKGROUND_LOCATION)
                                                     != PackageManager.PERMISSION_GRANTED) {
-
-
-
 
 
                                                 AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
@@ -124,16 +118,16 @@ public class MainActivity extends AppCompatActivity {
                                                 alertDialog.show();
 
 
-                                            }else if (ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.ACCESS_BACKGROUND_LOCATION)
-                                                    == PackageManager.PERMISSION_GRANTED){
+                                            } else if (ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.ACCESS_BACKGROUND_LOCATION)
+                                                    == PackageManager.PERMISSION_GRANTED) {
                                                 starServiceFunc();
                                             }
-                                        }else{
+                                        } else {
                                             starServiceFunc();
                                         }
 
-                                    }else if (ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.ACCESS_FINE_LOCATION)
-                                            != PackageManager.PERMISSION_GRANTED){
+                                    } else if (ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.ACCESS_FINE_LOCATION)
+                                            != PackageManager.PERMISSION_GRANTED) {
                                         if (ActivityCompat.shouldShowRequestPermissionRationale(MainActivity.this, Manifest.permission.ACCESS_FINE_LOCATION)) {
 
 
@@ -172,7 +166,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
         forget.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -191,19 +184,15 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void openRegisterActivity(){
+    public void openRegisterActivity() {
         Intent intent = new Intent(this, RegisterActivity.class);
         startActivity(intent);
     }
 
-    public void openForgetActivity(){
+    public void openForgetActivity() {
         Intent intent = new Intent(this, ForgetPasswordActivity.class);
         startActivity(intent);
     }
-
-
-
-
 
 
     //Location services
@@ -213,9 +202,9 @@ public class MainActivity extends AppCompatActivity {
 
         Toast.makeText(this, Integer.toString(requestCode), Toast.LENGTH_LONG).show();
 
-        if ( requestCode == MY_FINE_LOCATION_REQUEST){
+        if (requestCode == MY_FINE_LOCATION_REQUEST) {
 
-            if (grantResults.length !=0 /*grantResults.isNotEmpty()*/ && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            if (grantResults.length != 0 /*grantResults.isNotEmpty()*/ && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
                         == PackageManager.PERMISSION_GRANTED) {
                     requestBackgroundLocationPermission();
@@ -236,9 +225,9 @@ public class MainActivity extends AppCompatActivity {
             }
             return;
 
-        }else if (requestCode == MY_BACKGROUND_LOCATION_REQUEST){
+        } else if (requestCode == MY_BACKGROUND_LOCATION_REQUEST) {
 
-            if (grantResults.length!=0 /*grantResults.isNotEmpty()*/ && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            if (grantResults.length != 0 /*grantResults.isNotEmpty()*/ && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
                         == PackageManager.PERMISSION_GRANTED) {
                     Toast.makeText(this, "Background location Permission Granted", Toast.LENGTH_LONG).show();
@@ -251,7 +240,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void starServiceFunc(){
+    private void starServiceFunc() {
         mLocationService = new LocationService();
         mServiceIntent = new Intent(this, mLocationService.getClass());
         if (!Util.isMyServiceRunning(mLocationService.getClass(), this)) {
@@ -262,7 +251,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void stopServiceFunc(){
+    private void stopServiceFunc() {
         mLocationService = new LocationService();
         mServiceIntent = new Intent(this, mLocationService.getClass());
         if (Util.isMyServiceRunning(mLocationService.getClass(), this)) {
@@ -281,12 +270,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void requestFineLocationPermission() {
-        ActivityCompat.requestPermissions(this,  new String[]{Manifest.permission.ACCESS_FINE_LOCATION,}, MY_FINE_LOCATION_REQUEST);
+        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION,}, MY_FINE_LOCATION_REQUEST);
     }
 
-    public void saveLocation(){
+    public void saveLocation() {
         File dir = new File(this.getFilesDir(), "trickyworld");
-        if(!dir.exists()){
+        if (!dir.exists()) {
             dir.mkdir();
         }
 
@@ -297,11 +286,10 @@ public class MainActivity extends AppCompatActivity {
             writer.flush();
             writer.close();
             LocationService.locationArrayList.clear();
-        } catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
-
 
 
 }

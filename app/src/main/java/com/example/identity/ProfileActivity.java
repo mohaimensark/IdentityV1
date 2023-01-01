@@ -43,7 +43,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class ProfileActivity extends AppCompatActivity {
 
     ActivityProfileBinding binding;
-    TextView name,profession,email,about,profileLInk;
+    TextView name,profession,email,about;
     FirebaseAuth firebaseAuth;
     FirebaseFirestore firebaseFirestore;
     String userId;
@@ -82,8 +82,6 @@ public class ProfileActivity extends AppCompatActivity {
         age = findViewById(R.id.age);
         about = findViewById(R.id.about);
         logout = findViewById(R.id.logout);
-      //  profileLInk = findViewById(R.id.profileLink);
-
 
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseFirestore = FirebaseFirestore.getInstance();
@@ -216,7 +214,6 @@ public class ProfileActivity extends AppCompatActivity {
                 String about = binding.about.getText().toString();
                 String age = binding.age.getText().toString();
                 String email23 = binding.email.getText().toString();
-            //    String link = binding.profileLink.getText().toString();
                 Intent intent = new Intent(ProfileActivity.this, UpdateProfileActivity.class);
                                     intent.putExtra("age", age);
                                     intent.putExtra("name", name);

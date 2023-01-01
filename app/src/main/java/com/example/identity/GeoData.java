@@ -4,13 +4,15 @@ public class GeoData {
 
     private String latitude, longitude;
 
+
+    public GeoData() {
+    }
+
     public GeoData(String latitude, String longitude) {
         this.latitude = latitude;
         this.longitude = longitude;
     }
 
-    public GeoData() {
-    }
 
     public String getLatitude() {
         return latitude;

@@ -1,7 +1,6 @@
 package com.example.identity;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -16,11 +15,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.GeoPoint;
 
 import java.util.HashMap;
@@ -30,8 +25,8 @@ import java.util.Objects;
 public class UpdateProfileActivity extends AppCompatActivity {
 
     ActivityUpdateProfileBinding binding;
-    String name,age,profession,email,about,link;
-    EditText aboutUpdate,nameUpdate,ageUpdate,professUpdate,updateLink;
+    String name,age,profession,email,about;
+    EditText aboutUpdate,nameUpdate,ageUpdate,professUpdate;
     FirebaseAuth firebaseAuth;
     FirebaseFirestore firebaseFirestore;
     FirebaseDatabase firebaseDatabase;
@@ -51,8 +46,6 @@ public class UpdateProfileActivity extends AppCompatActivity {
         ageUpdate = findViewById(R.id.ageUpdate);
         aboutUpdate = findViewById(R.id.aboutUpdate);
         professUpdate = findViewById(R.id.professUpdate);
-        updateLink = findViewById(R.id.updateLink);
-
 
 
           name = getIntent().getStringExtra("name");
@@ -62,23 +55,11 @@ public class UpdateProfileActivity extends AppCompatActivity {
           about = getIntent().getStringExtra("about");
 
 
-        DocumentReference documentReference = firebaseFirestore.collection("User").document(firebaseAuth.getCurrentUser().getUid());
-        documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
-            @Override
-            public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
-
-                updateLink.setText(value.getString("profilelink"));
-
-            }
-        });
-
-
 
           aboutUpdate.setText(about);
           ageUpdate.setText(age);
           nameUpdate.setText(name);
           professUpdate.setText(profession);
-          updateLink.setText(link);
 
 
 
@@ -89,7 +70,6 @@ public class UpdateProfileActivity extends AppCompatActivity {
                           String upage = binding.ageUpdate.getText().toString();
                           String upabout = binding.aboutUpdate.getText().toString();
                           String upprofess = binding.professUpdate.getText().toString();
-                          String updateL = binding.updateLink.getText().toString();
 
                   Toast.makeText(UpdateProfileActivity.this, email, Toast.LENGTH_SHORT).show();
                   double lat = 51.5074;
@@ -116,7 +96,7 @@ public class UpdateProfileActivity extends AppCompatActivity {
 
 
                   firebaseFirestore.collection("User")
-                          .document(firebaseAuth.getCurrentUser().getUid()).set(new UserModel(upname,email,upprofess,upage,upabout,hash,updateL))
+                          .document(firebaseAuth.getCurrentUser().getUid()).set(new UserModel(email,upname,upprofess,upage,hash,upabout))
                           .addOnSuccessListener(new OnSuccessListener<Void>() {
                               @Override
                               public void onSuccess(Void unused) {
