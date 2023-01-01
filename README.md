@@ -17,3 +17,5 @@ When a user will click the listitem from landing page it will move to the other'
 
 This is user profile page
 ![Profile](https://user-images.githubusercontent.com/67890616/201689092-fa6811fe-1862-48c4-a081-4f2ed0d11e32.jpg)
+
+Version 1.0
